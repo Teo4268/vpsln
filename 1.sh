@@ -2,8 +2,13 @@
 
 # Tạo user mới
 USER_NAME="myuser"
+USER_PASSWORD="test123"
 sudo adduser --disabled-password --gecos "" "$USER_NAME"
 echo "User '$USER_NAME' đã được tạo thành công."
+
+# Đặt mật khẩu cho user
+echo "$USER_NAME:$USER_PASSWORD" | sudo chpasswd
+echo "Mật khẩu cho user '$USER_NAME' đã được đặt thành 'test123'."
 
 # Cài đặt fluxbox và wget
 sudo apt update
